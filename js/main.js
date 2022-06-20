@@ -24,6 +24,9 @@ imgList[activeElement].classList.add('active');
 next.addEventListener('click', function(){
     imgList[activeElement].classList.remove('active');
     activeElement++; 
+    if(activeElement === imgList.length){
+        activeElement = 0;
+    };
     imgList[activeElement].classList.add('active');
 });
 
