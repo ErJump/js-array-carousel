@@ -9,6 +9,8 @@ const images = [
 
 let activeElement = 0;
 const imgList = document.getElementById('img-container').children;
+const next = document.getElementById('next-button');
+const previous = document.getElementById('previous-button');
 
 for (let i = 0; i < images.length; i++){
     const newImg = document.createElement('img');
@@ -19,6 +21,11 @@ for (let i = 0; i < images.length; i++){
 
 imgList[activeElement].classList.add('active');
 
+next.addEventListener('click', function(){
+    imgList[activeElement].classList.remove('active');
+    activeElement++; 
+    imgList[activeElement].classList.add('active');
+});
 
 
 
