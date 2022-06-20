@@ -9,6 +9,7 @@ const images = [
 
 let activeElement = 0;
 const imgList = document.getElementById('img-container').children;
+const selectorList = document.getElementById('carousel-selector-container').children;
 const next = document.getElementById('next-button');
 const previous = document.getElementById('previous-button');
 
@@ -17,25 +18,35 @@ for (let i = 0; i < images.length; i++){
     newImg.setAttribute('src', images[i]);
     newImg.classList.add('w-100');
     document.getElementById('img-container').append(newImg);
+
+    const newSelector = document.createElement('div');
+    newSelector.classList.add('selector-item');
+    document.getElementById('carousel-selector-container').append(newSelector);
 }
 
 imgList[activeElement].classList.add('active');
+selectorList[activeElement].classList.add('active');
+
 
 next.addEventListener('click', function(){
     imgList[activeElement].classList.remove('active');
+    selectorList[activeElement].classList.remove('active');
     activeElement++; 
     if(activeElement === imgList.length){
         activeElement = 0;
     };
     imgList[activeElement].classList.add('active');
+    selectorList[activeElement].classList.add('active');
 });
 
 previous.addEventListener('click', function(){
     imgList[activeElement].classList.remove('active');
+    selectorList[activeElement].classList.remove('active');
     activeElement--; 
     if(activeElement < 0){
         activeElement = imgList.length - 1;
     };
     imgList[activeElement].classList.add('active');
+    selectorList[activeElement].classList.add('active');
 });
 

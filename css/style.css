@@ -12,3 +12,14 @@
 .carousel-wrapper .carousel-img-container img.active{
     display: block;
 }
+
+.selector-item{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+#carousel-selector-container div.active{
+    border: 5px solid #0B5ED7;
+}
