@@ -27,5 +27,9 @@ next.addEventListener('click', function(){
     imgList[activeElement].classList.add('active');
 });
 
-
+previous.addEventListener('click', function(){
+    imgList[activeElement].classList.remove('active');
+    activeElement--; 
+    imgList[activeElement].classList.add('active');
+});
 
