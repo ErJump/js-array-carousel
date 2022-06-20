@@ -33,6 +33,9 @@ next.addEventListener('click', function(){
 previous.addEventListener('click', function(){
     imgList[activeElement].classList.remove('active');
     activeElement--; 
+    if(activeElement < 0){
+        activeElement = imgList.length - 1;
+    };
     imgList[activeElement].classList.add('active');
 });
 
