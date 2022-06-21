@@ -6,7 +6,8 @@
 }
 
 .carousel-img-container{
-    height: 55vh;
+    height: 100%;
+    width: 100%;
 }
 
 .carousel-wrapper .carousel-img-container img.active{
@@ -22,4 +23,25 @@
 
 #carousel-selector-container div.active{
     border: 5px solid #0B5ED7;
+}
+
+#next-button{
+    top: 50%;
+    right: 10px;
+}
+
+#previous-button{
+    top: 50%;
+    left: 10px;
+}
+
+#carousel-selector-container{
+    bottom: 10px;
+    left: 40%;
+    right: 40%;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.position-relative.w-100{
+    height: 55vh;
 }
