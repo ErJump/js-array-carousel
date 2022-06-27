@@ -28,16 +28,7 @@ imgList[activeElement].classList.add('active');
 selectorList[activeElement].classList.add('active');
 
 
-next.addEventListener('click', function(){
-    imgList[activeElement].classList.remove('active');
-    selectorList[activeElement].classList.remove('active');
-    activeElement++; 
-    if(activeElement === imgList.length){
-        activeElement = 0;
-    };
-    imgList[activeElement].classList.add('active');
-    selectorList[activeElement].classList.add('active');
-});
+next.addEventListener('click', goNext);
 
 previous.addEventListener('click', function(){
     imgList[activeElement].classList.remove('active');
@@ -50,3 +41,15 @@ previous.addEventListener('click', function(){
     selectorList[activeElement].classList.add('active');
 });
 
+const clock = setInterval(goNext, 5000)
+
+function goNext(){
+    imgList[activeElement].classList.remove('active');
+    selectorList[activeElement].classList.remove('active');
+    activeElement++; 
+    if(activeElement === imgList.length){
+        activeElement = 0;
+    };
+    imgList[activeElement].classList.add('active');
+    selectorList[activeElement].classList.add('active');
+} 
